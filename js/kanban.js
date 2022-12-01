@@ -20,10 +20,12 @@ const create_item = () => {
   item.classList.add("item");
   item.setAttribute("id", `item-${order}`);
   item.draggable = true;
-  item.addEventListener('dragstart', event => event.dataTransfer.setData('text', event.target.id))
-  item.addEventListener('dragend', event => event.dataTransfer.clearData())
-  let input = document.createElement("input")
-  item.appendChild(input)
+  item.addEventListener('dragstart', event => event.dataTransfer.setData('text', event.target.id));
+  item.addEventListener('dragend', event => event.dataTransfer.clearData());
+  let input = document.createElement("input");
+  item.appendChild(input);
+  let save_btn = document.createElement("button");
+  save_btn.innerHTML=("Save");
 };
 
 document.querySelectorAll('.drop').forEach(element => {
